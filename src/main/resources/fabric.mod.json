@@ -1,10 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "mc_discord_bot",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "minecraft server discord integration",
   "authors": [
     "Me!"
   ],
@@ -19,20 +18,17 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      {
+        "adapter": "kotlin",
+        "value":  "net.fabricmc.bot.Bot"
+      }
     ]
   },
-  "mixins": [
-    "modid.mixins.json"
-  ],
 
   "depends": {
+    "fabric-language-kotlin": ">=1.9.4+kotlin.1.8.21",
     "fabricloader": ">=0.14.19",
-    "fabric-api": "*",
     "minecraft": "~1.19.4",
     "java": ">=17"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }
